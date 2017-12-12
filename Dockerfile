@@ -1,18 +1,25 @@
 FROM ruby:2.3-slim
-# Instala as nossas dependencias
-RUN apt-get update && apt-get install -qq -y --no-install-recommends \
-      build-essential nodejs libpq-dev
-# Seta nosso path
-ENV INSTALL_PATH /usr/src/app
-# Cria nosso diretório
-RUN mkdir -p $INSTALL_PATH
-# Seta o nosso path como o diretório principal
-WORKDIR $INSTALL_PATH
-# Copia o nosso Gemfile para dentro do container
-COPY Gemfile ./
-# Instala as Gems
-RUN bundle install
-# Copia nosso código para dentro do container
+
+RUN apt-get update && apt-get install -y curl apt-transport-https build-essential libpq-dev imagemagick libmagickwand-dev
+
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
+    apt-get install -y nodejs && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
+    apt-get update && \
+    apt-get install yarn && \
+rm -rf /var/lib/apt/lists/*
+
+ENV RAILS_ROOT /usr/app
+WORKDIR $RAILS_ROOT
+
+COPY Gemfile Gemfile
+COPY Gemfile.lock Gemfile.lock
+ENV BUNDLE_PATH /gems
+RUN gem install bundler
+#RUN bundle install --jobs 4 --retry 5
+
 COPY . .
-# Roda nosso servidor
-CMD puma -C config/puma.rb
+
