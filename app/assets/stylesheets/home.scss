@@ -4,8 +4,22 @@ body {
 
 .logo-box,
 .button-exchange {
-    margin: 0 auto;
+    margin-top: 40px;
     padding-bottom: 10px;
+}
+
+.button-exchange:hover {
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    -webkit-transform: scale3d(1.1, 1.1, 1);
+    transform: scale3d(1.1, 1.1, 1);
+}
+
+*,
+*::before,
+*::after {
+    -webkit-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
 }
 
 .navbar {
@@ -94,19 +108,44 @@ body {
     margin-top: 90px;
     margin-left: 50px;
     margin-right: 50px;
-    transition: all .5s ease-in-out;
+    transition: all .3s ease-in-out;
     background: linear-gradient(124deg, rgb(248, 248, 249) 15%, #e2eff2 70%, #dff4ff 94%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.refresh:hover {
-    color: #fff;
-    transform: scale(10);
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
+.spin {
+    transition: all .5s ease-in-out;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 
 .fixer-tag {
     margin-top: 60px;
+}
+
+.spinner {
+    display: none;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner:before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    border-top-color: #333;
+    animation: spinner .6s linear infinite;
 }
