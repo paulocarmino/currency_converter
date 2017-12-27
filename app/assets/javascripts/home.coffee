@@ -1,3 +1,18 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).ready ->
+  $('#quantity').val('');
+  $('#result').val('');
+  $('.button-exchange').click ->
+    if $('form').attr('action') == '/exchange'
+      $.ajax '/exchange',
+        type: 'POST'
+        dataType: 'json'
+        data: {
+          currency: $("#currency").val(),
+          currency_destination: $("#currency_destination").val(),
+          quantity: $("#quantity").val()
+        }
+        error: (jqXHR, textStatus, errorThrown) ->
+          alert textStatus
+        success: (data, text, jqXHR) ->
+          $('#result').val(data.value)
+      return false;
