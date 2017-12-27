@@ -10,10 +10,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-  <section class="section">
-    <div class="container">
-      <%= yield %>
+  <%= render 'shared/navbar' %>  
+  <section class="hero is-fullheight">
+    <div class="hero-body">
+      <div class="container is-fluid">
+        <%= yield %>
+      </div>
     </div>
   </section>
+  <%= render 'shared/footer' %>
   </body>
 </html>
