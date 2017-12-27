@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OnebitcodeExchange</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simple Currency Converter</title>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag '/favicon.png' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+  <%= render 'shared/navbar' %>  
+  <section class="hero is-fullheight">
+    <div class="hero-body">
+      <div class="container is-fluid">
+        <%= yield %>
+      </div>
+    </div>
+  </section>
+  <%= render 'shared/footer' %>
   </body>
 </html>
