@@ -1,4 +1,10 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ *= require font-path-overwrite 
+ *= require font-awesome/scss/font-awesome
+ */
+
 @import "bulma/bulma";
-$fa-font-path: "font-awesome/fonts";
-@import "font-awesome/scss/font-awesome";
 @import "home";
