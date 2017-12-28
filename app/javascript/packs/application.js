@@ -8,6 +8,3 @@
 // layout file, like app/views/layouts/application.html.erb
 
 import 'font-awesome/scss/font-awesome';
-import 'bulma/bulma';
-
-console.log('Hello World from Webpacker')
