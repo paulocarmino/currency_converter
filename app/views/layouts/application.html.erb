@@ -11,14 +11,20 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-  <%= render 'shared/navbar' %>  
-  <section class="hero is-fullheight">
-    <div class="hero-body">
-      <div class="container is-fluid">
-        <%= yield %>
+    <section id="body-section" class="hero is-fullheight">
+      <div class="hero-head">
+        <%= render 'shared/navbar' %>
       </div>
-    </div>
-  </section>
-  <%= render 'shared/footer' %>
+
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <%= yield %>          
+        </div>
+      </div>
+
+      <div class="hero-foot">
+        <%= render 'shared/footer' %>        
+      </div>
+    </section>
   </body>
 </html>

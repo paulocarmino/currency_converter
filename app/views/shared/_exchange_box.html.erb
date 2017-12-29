@@ -1,7 +1,6 @@
-<%= form_tag("/exchange", method: "post", id: "exchange_form") do %>
-  <div class="columns is-multiline is-centered">
-    <div class="column is-narrow">
-      <div class="bd-notification is-light">
+  <div class="columns is-centered">
+
+      <div class="column box is-light is-4">
         <p class="subtitle has-text-weight-semibold">Currency I Have</p>
         <div class="content">
           <div class="field has-addons has-addons-centered">
@@ -15,15 +14,15 @@
               </p>
             </div>
         </div>
-      </div>
     </div>
-    <div class="column is-narrow">
+
+    <div class="column has-text-centered is-1 is-narrow">
       <a class="icon is-large">
         <i class="fa fa-2x fa-refresh bd-rainbow refresh"></i>
       </a>
     </div>
-    <div class="column is-narrow">
-      <div class="bd-notification is-light">
+
+      <div class="column box is-light is-4">
         <p class="subtitle has-text-weight-semibold">Currency I Want</p>
         <div class="content">
           <div class="field has-addons has-addons-centered">
@@ -37,14 +36,6 @@
               </p>
             </div>
         </div>
-      </div>
     </div>
+
   </div>
-  <div class="columns is-multiline is-centered">
-    <div class="spinner"></div>
-    <p class="tag is-info fixer-tag">Results by Fixer.io - Foreign exchange rates and currency conversion API</span>
-  </div>
-  <div class="columns is-multiline is-centered">
-    <a><button class="button is-success is-bold is-large button-exchange">Please, convert!</button></a>    
-  </div>    
-<% end %>
