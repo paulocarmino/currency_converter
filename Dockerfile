@@ -1,6 +1,6 @@
-FROM ruby:2.3-slim
+FROM ruby:2.4-slim
 
-RUN apt-get update && apt-get install -y curl apt-transport-https build-essential libpq-dev imagemagick libmagickwand-dev
+RUN apt-get update && apt-get install -y git curl apt-transport-https build-essential libpq-dev
 
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
     apt-get install -y nodejs && \
