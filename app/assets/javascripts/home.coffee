@@ -5,6 +5,13 @@ $(document).ready ->
   $('#quantity').val('');
   $('#result').val('');
 
+  if $(window).width() < '599'
+      $('#body-section').removeClass 'is-fullheight'
+      $('.refresh').addClass 'refresh-mobile'
+
+  if $(window).width() > '600'
+      $('.refresh').removeClass 'refresh-mobile'
+
   $('#quantity').keyup (event) ->
     if event.keyCode == 13
       $('.button-exchange').click()
