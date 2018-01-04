@@ -10,9 +10,8 @@ script:
 - bin/rake assets:precompile
 - bin/rake
 cache:
+  bundler: true
   yarn: true
-  directories:
-    - node_modules
 deploy:
   provider: heroku
   api_key:
