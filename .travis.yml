@@ -9,6 +9,7 @@ script:
 - nvm install node
 - npm install -g yarn --cache-min 999999999
 - bin/rake db:migrate RAILS_ENV=test
+- yarn
 - bin/rake
 cache:
   yarn: true
