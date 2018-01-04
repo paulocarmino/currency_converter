@@ -1,11 +1,8 @@
 language: ruby
 rvm:
 - 2.4
-addons:
-  firefox: 38.0.5
 before_install:
-- export DISPLAY=:99.0
-- sh -e /etc/init.d/xvfb start
+- psql -c 'create database orangeconverter_test;' -U postgres
 script:
 - bin/rake db:migrate RAILS_ENV=test
 - bin/rake
@@ -15,3 +12,5 @@ deploy:
     secure: HEcVVY+Jg3lHGYdj3OSNF5UhdnznH0HXwXvHNJdh3msCO9puXL1P45NcU4NY8aDgjEOyiC9xdS1tHhPNwJyigC3tBBt8b1emKG4T8d2RBEWriIDR9ytNhpCoWXYvEYQ316Fz7ZrAyUY52c9YOSBL0ydswaGX06iNSPeIOBwcFmGYut0J4RoTIW/fdQtk3VyFYmDUhdfYo4GdKe/AxF05fWId66Gv7vOAljDTWBuE6n4xAbNBIEmCaexRfNkN52Pi/r9z6UMh3maKmS5+5nNNEWJH0AAfQY91oGGgCnPxK2ZoGXVPzGivrpE2kblro5icW8KTP0n7YuL6HhujiDi1lS7xww+Lygx08m3xJ+mL5+VXuWASj4FWytmYwXnHRwZ6sgAUtfPOvClhv9tv7NMIWipi6tUISisrEz0kcqRU6+8x93KAsmC65fn2ce2e6snCOiIlrPTOWAxD2bkCWV0zyXMXt7ehxawwSwOoVoDm3uOEf073LY+n+hzZeJ6151HPQ6b7jdcgY7X6BJhbDngVH0mY5K+Gy7XVqE87WgClDNBIELoEqzsa3m+3Obe7O4rGUOWHJNAVegUU6EPKpLItfMmmzPfgZ9bN2FNcCOj2j0fk3/Y9bLLHWrlBwh6ljf5k6LP+Pkk4Q7dUvp5zFK6wcFhHLQZuZ9pMmusB+MGy1iA=
   app:
     master: orange-converter
+services:
+  - postgresql
