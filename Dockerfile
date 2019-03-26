@@ -1,4 +1,4 @@
-FROM ruby:2.4-slim
+FROM ruby:2.5-slim
 
 RUN apt-get update && apt-get install -y git curl apt-transport-https build-essential libpq-dev
 
@@ -19,7 +19,6 @@ COPY Gemfile Gemfile
 COPY Gemfile.lock Gemfile.lock
 ENV BUNDLE_PATH /gems
 RUN gem install bundler
-#RUN bundle install --jobs 4 --retry 5
 
 COPY . .
 
