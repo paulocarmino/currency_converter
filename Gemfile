@@ -17,7 +17,6 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
 gem 'execjs'
 # gem 'therubyracer', platforms: :ruby
 # Use CoffeeScript for .coffee assets and views
