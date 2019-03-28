@@ -1,10 +1,10 @@
-<%= form_tag("/exchange", method: "post", id: "exchange_form") do %>
+<%= form_tag("/convert", method: "get", id: "exchange_form") do %>
 
   <%= render 'shared/exchange_box' %>
 
   <div class="columns is-centered">
     <div class="spinner"></div>
-    <p class="bd-notification is-info fixer-tag">Results by Fixer.io - Foreign exchange rates and currency conversion API</span>
+    <p class="bd-notification is-info fixer-tag">Results by CurrencyDataFeed.com - Currency Exchange Rates & Forex API</span>
   </div>
   <div class="columns is-multiline is-centered">
     <a><button class="button is-success is-bold is-large button-exchange">Please, convert!</button></a>    

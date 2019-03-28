@@ -26,9 +26,9 @@ $(document).ready ->
     
   $('.button-exchange').click ->
     $('.spinner').show();
-    if $('form').attr('action') == '/exchange'
-      $.ajax '/exchange',
-        type: 'POST'
+    if $('form').attr('action') == '/convert'
+      $.ajax '/convert',
+        type: 'GET'
         dataType: 'json'
         data: {
           currency: currency.val(),
