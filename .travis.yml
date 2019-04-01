@@ -7,10 +7,8 @@ before_install:
 - yarn
 script:
 - bin/rake db:migrate RAILS_ENV=test
-- bundle exec rails webpacker:binstubs
-- bin/rake
-after_success:
 - bin/rake assets:precompile
+- bin/rake
 cache:
   bundler: true
   yarn: true
