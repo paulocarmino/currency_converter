@@ -28,15 +28,15 @@
 
 ## Introduction
 
-This is a app for exchange currencies using Fixer.io rates.
+This is a app for exchange currencies using CurrencyDataFeed.com rates.
 Please, see our [demo on heroku.](https://orange-converter.herokuapp.com)
 
 ## Features
 
 A few of the things about development of this app.
 
-* Library developed to communicate with API Fixer.io;
-* Use Webpacker and Yarn for frontend deps;
+* Library developed to communicate with API CurrencyDataFeed.com;
+* Use Yarn for frontend deps;
 * Javascript writed in Coffescript;
 * Bulma CSS for style;
 * Docker environment;
